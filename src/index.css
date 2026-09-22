@@ -6,7 +6,9 @@
   text-rendering: optimizeLegibility;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 /* Custom range thumb */
 input[type="range"]::-webkit-slider-thumb {
@@ -29,4 +31,87 @@ input[type="range"]::-moz-range-thumb {
   border: 2px solid #6366f1;
   box-shadow: 0 2px 6px rgba(99, 102, 241, 0.35);
   cursor: pointer;
+}
+
+/* Reusable Micro-interactions & Card Hover */
+.card-hover {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.22s ease;
+  will-change: transform, box-shadow;
+}
+
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.08), 0 6px 12px -4px rgba(15, 23, 42, 0.03);
+}
+
+.btn-press {
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.btn-press:active {
+  transform: scale(0.98);
+}
+
+/* Reusable Scroll Reveal Animations */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(18px) scale(0.99);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Long-Scroll Section Entrance (450–650ms, 24px translateY) */
+.scroll-section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 550ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 550ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Subtle staggered transition delays */
+.stagger-1 { transition-delay: 50ms; }
+.stagger-2 { transition-delay: 100ms; }
+.stagger-3 { transition-delay: 150ms; }
+.stagger-4 { transition-delay: 200ms; }
+.stagger-5 { transition-delay: 250ms; }
+.stagger-6 { transition-delay: 300ms; }
+.stagger-7 { transition-delay: 350ms; }
+
+/* Clean minimal scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Accessibility: Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-section,
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .card-hover:hover {
+    transform: none !important;
+  }
+  .btn-press:active {
+    transform: none !important;
+  }
 }
