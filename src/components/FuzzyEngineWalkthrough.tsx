@@ -74,12 +74,12 @@ export default function FuzzyEngineWalkthrough({
         ];
 
   return (
-    <div className="space-y-16 pb-12">
+    <div className="space-y-10 sm:space-y-14 md:space-y-16 pb-12">
       {/* ================================================================
           SECTION 1 — HERO / INTRODUCTION
           ================================================================ */}
       <section id="hero" className="scroll-section">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-900 via-indigo-950 to-slate-950 text-white p-8 sm:p-12 shadow-xl border border-indigo-800/40">
+        <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-br from-indigo-900 via-indigo-950 to-slate-950 text-white p-5 sm:p-8 md:p-12 shadow-xl border border-indigo-800/40">
           <div className="absolute inset-0 pointer-events-none opacity-20">
             <div className="absolute -top-24 -left-20 w-96 h-96 rounded-full bg-indigo-500 blur-3xl" />
             <div className="absolute -bottom-24 -right-20 w-96 h-96 rounded-full bg-purple-500 blur-3xl" />
@@ -91,76 +91,76 @@ export default function FuzzyEngineWalkthrough({
               <span>V1 Fuzzy Logic Engine</span>
             </div>
 
-            <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
+            <h1 className="mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight break-words">
               Analyze academic stress and burnout using Mamdani fuzzy logic.
             </h1>
 
-            <p className="mt-4 text-base sm:text-lg text-indigo-200/90 leading-relaxed max-w-3xl">
+            <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-indigo-200/90 leading-relaxed max-w-3xl">
               The original Academic Stress Analyzer evaluates sleep, study hours, assignment workload,
               and attendance using fuzzy membership functions and rule-based inference.
             </p>
 
             {/* Quick Section Anchor Pills */}
-            <div className="mt-8 flex flex-wrap items-center gap-2 text-xs font-medium">
+            <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-medium">
               <span className="text-indigo-400 text-xs mr-1 hidden sm:inline">Jump to:</span>
               <a
                 href="#fuzzy-inputs"
-                className="btn-press px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-indigo-100 border border-white/10 transition"
+                className="btn-press px-2.5 sm:px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-indigo-100 border border-white/10 transition shrink-0 min-h-[36px] inline-flex items-center"
               >
                 1. Inputs
               </a>
               <a
                 href="#fuzzy-results"
-                className="btn-press px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-indigo-100 border border-white/10 transition"
+                className="btn-press px-2.5 sm:px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-indigo-100 border border-white/10 transition shrink-0 min-h-[36px] inline-flex items-center"
               >
                 2. Results
               </a>
               <a
                 href="#fuzzy-visuals"
-                className="btn-press px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-indigo-100 border border-white/10 transition"
+                className="btn-press px-2.5 sm:px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-indigo-100 border border-white/10 transition shrink-0 min-h-[36px] inline-flex items-center"
               >
                 3. Visualizations
               </a>
               <a
                 href="#fuzzy-memberships"
-                className="btn-press px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-indigo-100 border border-white/10 transition"
+                className="btn-press px-2.5 sm:px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-indigo-100 border border-white/10 transition shrink-0 min-h-[36px] inline-flex items-center"
               >
                 4. Memberships
               </a>
               <a
                 href="#fuzzy-rules"
-                className="btn-press px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-indigo-100 border border-white/10 transition"
+                className="btn-press px-2.5 sm:px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-indigo-100 border border-white/10 transition shrink-0 min-h-[36px] inline-flex items-center"
               >
                 5. Rule Base
               </a>
               <a
                 href="#fuzzy-code"
-                className="btn-press px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-indigo-100 border border-white/10 transition"
+                className="btn-press px-2.5 sm:px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-indigo-100 border border-white/10 transition shrink-0 min-h-[36px] inline-flex items-center"
               >
                 6. Code Viewer
               </a>
             </div>
 
             {/* Current Status Baseline Chips */}
-            <div className="mt-8 pt-6 border-t border-indigo-800/60 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-              <div className="p-3 rounded-2xl bg-white/5 border border-white/10">
+            <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-indigo-800/60 grid grid-cols-1 min-[360px]:grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 text-xs">
+              <div className="p-3 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10">
                 <span className="text-indigo-300 block text-[10px] font-bold uppercase tracking-wider">Current Stress</span>
-                <span className="text-lg font-bold text-white mt-0.5 block">{result.stressScore.toFixed(1)}/100</span>
+                <span className="text-base sm:text-lg font-bold text-white mt-0.5 block">{result.stressScore.toFixed(1)}/100</span>
                 <span className="text-[10px] text-indigo-300 font-medium">Level: {result.stressLevel}</span>
               </div>
-              <div className="p-3 rounded-2xl bg-white/5 border border-white/10">
+              <div className="p-3 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10">
                 <span className="text-purple-300 block text-[10px] font-bold uppercase tracking-wider">Current Burnout</span>
-                <span className="text-lg font-bold text-white mt-0.5 block">{result.burnoutScore.toFixed(1)}/100</span>
+                <span className="text-base sm:text-lg font-bold text-white mt-0.5 block">{result.burnoutScore.toFixed(1)}/100</span>
                 <span className="text-[10px] text-purple-300 font-medium">Risk: {result.burnoutRisk}</span>
               </div>
-              <div className="p-3 rounded-2xl bg-white/5 border border-white/10">
+              <div className="p-3 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10">
                 <span className="text-slate-300 block text-[10px] font-bold uppercase tracking-wider">Fuzzy Rules</span>
-                <span className="text-lg font-bold text-white mt-0.5 block">32 Rules</span>
+                <span className="text-base sm:text-lg font-bold text-white mt-0.5 block">32 Rules</span>
                 <span className="text-[10px] text-slate-300 font-medium">17 Stress + 15 Burnout</span>
               </div>
-              <div className="p-3 rounded-2xl bg-white/5 border border-white/10">
+              <div className="p-3 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10">
                 <span className="text-slate-300 block text-[10px] font-bold uppercase tracking-wider">Defuzzification</span>
-                <span className="text-lg font-bold text-white mt-0.5 block">Centroid</span>
+                <span className="text-base sm:text-lg font-bold text-white mt-0.5 block">Centroid</span>
                 <span className="text-[10px] text-slate-300 font-medium">Mamdani Min-Max</span>
               </div>
             </div>
@@ -179,15 +179,15 @@ export default function FuzzyEngineWalkthrough({
           subtitle="Adjust the four fundamental academic factors. Triangular membership functions map these continuous inputs into fuzzy linguistic truth degrees."
         />
 
-        <div className="mt-8 bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 card-hover">
-          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="mt-8 bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-sm border border-slate-200 card-hover">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
             {/* 1. Sleep Hours */}
-            <div className="p-4 rounded-2xl bg-slate-50/70 border border-slate-200/80 transition-all duration-200 hover:bg-white hover:border-indigo-300">
-              <div className="flex items-center justify-between mb-2">
-                <label className="flex items-center gap-2 text-sm font-semibold text-slate-800">
-                  <Moon className="w-4 h-4 text-indigo-500" /> Sleep Hours per day
+            <div className="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-50/70 border border-slate-200/80 transition-all duration-200 hover:bg-white hover:border-indigo-300">
+              <div className="flex items-center justify-between mb-2 gap-2">
+                <label className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold text-slate-800">
+                  <Moon className="w-4 h-4 text-indigo-500 shrink-0" /> Sleep Hours per day
                 </label>
-                <span className="font-mono text-xs font-bold px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-700 border border-indigo-200">
+                <span className="font-mono text-xs font-bold px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-700 border border-indigo-200 shrink-0">
                   {sleep}h
                 </span>
               </div>
@@ -203,7 +203,7 @@ export default function FuzzyEngineWalkthrough({
                   background: `linear-gradient(to right, #6366f1 0%, #a855f7 ${(sleep / 12) * 100}%, #e2e8f0 ${(sleep / 12) * 100}%, #e2e8f0 100%)`,
                 }}
               />
-              <div className="flex justify-between text-[10px] text-slate-400 mt-1.5 font-mono">
+              <div className="flex justify-between text-[9.5px] sm:text-[10px] text-slate-400 mt-1.5 font-mono">
                 <span>0h (Low &lt;6h)</span>
                 <span>6–8h (Medium)</span>
                 <span>12h (High &gt;8h)</span>
@@ -214,12 +214,12 @@ export default function FuzzyEngineWalkthrough({
             </div>
 
             {/* 2. Daily Study Hours */}
-            <div className="p-4 rounded-2xl bg-slate-50/70 border border-slate-200/80 transition-all duration-200 hover:bg-white hover:border-indigo-300">
-              <div className="flex items-center justify-between mb-2">
-                <label className="flex items-center gap-2 text-sm font-semibold text-slate-800">
-                  <BookOpen className="w-4 h-4 text-blue-500" /> Daily Study Hours
+            <div className="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-50/70 border border-slate-200/80 transition-all duration-200 hover:bg-white hover:border-indigo-300">
+              <div className="flex items-center justify-between mb-2 gap-2">
+                <label className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold text-slate-800">
+                  <BookOpen className="w-4 h-4 text-blue-500 shrink-0" /> Daily Study Hours
                 </label>
-                <span className="font-mono text-xs font-bold px-2.5 py-1 rounded-lg bg-blue-50 text-blue-700 border border-blue-200">
+                <span className="font-mono text-xs font-bold px-2.5 py-1 rounded-lg bg-blue-50 text-blue-700 border border-blue-200 shrink-0">
                   {study}h
                 </span>
               </div>
@@ -235,7 +235,7 @@ export default function FuzzyEngineWalkthrough({
                   background: `linear-gradient(to right, #6366f1 0%, #a855f7 ${(study / 15) * 100}%, #e2e8f0 ${(study / 15) * 100}%, #e2e8f0 100%)`,
                 }}
               />
-              <div className="flex justify-between text-[10px] text-slate-400 mt-1.5 font-mono">
+              <div className="flex justify-between text-[9.5px] sm:text-[10px] text-slate-400 mt-1.5 font-mono">
                 <span>0h (Low &lt;4h)</span>
                 <span>4–7h (Medium)</span>
                 <span>15h (High &gt;7h)</span>
@@ -246,12 +246,12 @@ export default function FuzzyEngineWalkthrough({
             </div>
 
             {/* 3. Assignment Workload */}
-            <div className="p-4 rounded-2xl bg-slate-50/70 border border-slate-200/80 transition-all duration-200 hover:bg-white hover:border-indigo-300">
-              <div className="flex items-center justify-between mb-2">
-                <label className="flex items-center gap-2 text-sm font-semibold text-slate-800">
-                  <FileSpreadsheet className="w-4 h-4 text-purple-500" /> Assignment Workload (Scale 0–10)
+            <div className="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-50/70 border border-slate-200/80 transition-all duration-200 hover:bg-white hover:border-indigo-300">
+              <div className="flex items-center justify-between mb-2 gap-2">
+                <label className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold text-slate-800">
+                  <FileSpreadsheet className="w-4 h-4 text-purple-500 shrink-0" /> Assignment Workload (Scale 0–10)
                 </label>
-                <span className="font-mono text-xs font-bold px-2.5 py-1 rounded-lg bg-purple-50 text-purple-700 border border-purple-200">
+                <span className="font-mono text-xs font-bold px-2.5 py-1 rounded-lg bg-purple-50 text-purple-700 border border-purple-200 shrink-0">
                   {assignments} / 10
                 </span>
               </div>
@@ -267,7 +267,7 @@ export default function FuzzyEngineWalkthrough({
                   background: `linear-gradient(to right, #6366f1 0%, #a855f7 ${(assignments / 10) * 100}%, #e2e8f0 ${(assignments / 10) * 100}%, #e2e8f0 100%)`,
                 }}
               />
-              <div className="flex justify-between text-[10px] text-slate-400 mt-1.5 font-mono">
+              <div className="flex justify-between text-[9.5px] sm:text-[10px] text-slate-400 mt-1.5 font-mono">
                 <span>0 (Light &lt;3)</span>
                 <span>3–6 (Moderate)</span>
                 <span>10 (Heavy &gt;6)</span>
@@ -278,12 +278,12 @@ export default function FuzzyEngineWalkthrough({
             </div>
 
             {/* 4. Attendance Percentage */}
-            <div className="p-4 rounded-2xl bg-slate-50/70 border border-slate-200/80 transition-all duration-200 hover:bg-white hover:border-indigo-300">
-              <div className="flex items-center justify-between mb-2">
-                <label className="flex items-center gap-2 text-sm font-semibold text-slate-800">
-                  <GraduationCap className="w-4 h-4 text-emerald-500" /> Attendance Percentage
+            <div className="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-50/70 border border-slate-200/80 transition-all duration-200 hover:bg-white hover:border-indigo-300">
+              <div className="flex items-center justify-between mb-2 gap-2">
+                <label className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold text-slate-800">
+                  <GraduationCap className="w-4 h-4 text-emerald-500 shrink-0" /> Attendance Percentage
                 </label>
-                <span className="font-mono text-xs font-bold px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200">
+                <span className="font-mono text-xs font-bold px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200 shrink-0">
                   {attendance}%
                 </span>
               </div>
@@ -299,7 +299,7 @@ export default function FuzzyEngineWalkthrough({
                   background: `linear-gradient(to right, #6366f1 0%, #a855f7 ${attendance}%, #e2e8f0 ${attendance}%, #e2e8f0 100%)`,
                 }}
               />
-              <div className="flex justify-between text-[10px] text-slate-400 mt-1.5 font-mono">
+              <div className="flex justify-between text-[9.5px] sm:text-[10px] text-slate-400 mt-1.5 font-mono">
                 <span>0% (Low &lt;75%)</span>
                 <span>75–85% (Medium)</span>
                 <span>100% (High &gt;85%)</span>
@@ -311,7 +311,7 @@ export default function FuzzyEngineWalkthrough({
           </div>
 
           {/* Action Button & Stale Indicator */}
-          <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4">
             <div className="flex items-center gap-2">
               {isStale ? (
                 <div className="inline-flex items-center gap-2 text-xs font-medium text-amber-800 bg-amber-50 border border-amber-200 px-3.5 py-1.5 rounded-xl">
@@ -329,7 +329,7 @@ export default function FuzzyEngineWalkthrough({
             <button
               onClick={onRunAnalysis}
               disabled={isAnalysing}
-              className="btn-press w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-600 via-indigo-700 to-purple-700 text-white font-semibold px-6 py-3 rounded-xl shadow-md shadow-indigo-500/20 hover:shadow-lg hover:shadow-indigo-500/30 transition-all duration-200 cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed"
+              className="btn-press w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-600 via-indigo-700 to-purple-700 text-white font-semibold px-5 sm:px-6 py-3 min-h-[44px] rounded-xl shadow-md shadow-indigo-500/20 hover:shadow-lg hover:shadow-indigo-500/30 transition-all duration-200 cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed"
             >
               {isAnalysing ? (
                 <>
@@ -361,9 +361,9 @@ export default function FuzzyEngineWalkthrough({
           subtitle="Deterministic Mamdani centroid defuzzification calculated from the evaluated rule base."
         />
 
-        <div className="mt-8 grid md:grid-cols-2 gap-6">
+        <div className="mt-6 sm:mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {/* Stress Result Card */}
-          <div className="card-hover relative bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-sm overflow-hidden">
+          <div className="card-hover relative bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 border border-slate-200 shadow-sm overflow-hidden">
             <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-indigo-500 to-indigo-700" />
             <div className="flex items-center justify-between">
               <span className="text-xs font-bold uppercase tracking-wider text-slate-500">Academic Stress Score</span>
@@ -381,10 +381,10 @@ export default function FuzzyEngineWalkthrough({
             </div>
 
             <div className="mt-4 flex items-baseline gap-2">
-              <span className="text-5xl font-extrabold text-slate-900 tracking-tight">
+              <span className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
                 {result.stressScore.toFixed(1)}
               </span>
-              <span className="text-slate-400 font-semibold text-lg">/ 100</span>
+              <span className="text-slate-400 font-semibold text-base sm:text-lg">/ 100</span>
             </div>
 
             <p className="mt-3 text-xs text-slate-600 leading-relaxed font-medium">
@@ -392,13 +392,13 @@ export default function FuzzyEngineWalkthrough({
             </p>
 
             <div className="mt-4 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs text-slate-500">
-              <CheckCircle2 className="w-3.5 h-3.5 text-indigo-600" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-indigo-600 shrink-0" />
               <span>Antecedent defuzzification: Centroid center of mass</span>
             </div>
           </div>
 
           {/* Burnout Result Card */}
-          <div className="card-hover relative bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-sm overflow-hidden">
+          <div className="card-hover relative bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 border border-slate-200 shadow-sm overflow-hidden">
             <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-purple-500 to-fuchsia-700" />
             <div className="flex items-center justify-between">
               <span className="text-xs font-bold uppercase tracking-wider text-slate-500">Burnout Risk Score</span>
@@ -416,10 +416,10 @@ export default function FuzzyEngineWalkthrough({
             </div>
 
             <div className="mt-4 flex items-baseline gap-2">
-              <span className="text-5xl font-extrabold text-slate-900 tracking-tight">
+              <span className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
                 {result.burnoutScore.toFixed(1)}
               </span>
-              <span className="text-slate-400 font-semibold text-lg">/ 100</span>
+              <span className="text-slate-400 font-semibold text-base sm:text-lg">/ 100</span>
             </div>
 
             <p className="mt-3 text-xs text-slate-600 leading-relaxed font-medium">
@@ -444,12 +444,12 @@ export default function FuzzyEngineWalkthrough({
           subtitle="Side-by-side comparative spectrum with rule-triggered baseline academic recommendations."
         />
 
-        <div className="mt-8 grid lg:grid-cols-5 gap-6">
+        <div className="mt-6 sm:mt-8 grid grid-cols-1 lg:grid-cols-5 gap-4 sm:gap-6">
           {/* Comparison Spectrum Card */}
-          <div className="lg:col-span-3 bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-sm card-hover">
+          <div className="lg:col-span-3 bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-7 border border-slate-200 shadow-sm card-hover">
             <div className="flex items-center gap-2 mb-4">
-              <BarChart3 className="w-5 h-5 text-indigo-600" />
-              <h3 className="font-bold text-slate-900 text-base">Stress &amp; Burnout Output Spectrum</h3>
+              <BarChart3 className="w-5 h-5 text-indigo-600 shrink-0" />
+              <h3 className="font-bold text-slate-900 text-sm sm:text-base">Stress &amp; Burnout Output Spectrum</h3>
             </div>
             <p className="text-xs text-slate-500 mb-6">
               Visual comparison showing where the defuzzified crisp output falls along the 0–100 continuum:
@@ -457,9 +457,9 @@ export default function FuzzyEngineWalkthrough({
 
             {/* Stress Bar */}
             <div className="mb-6">
-              <div className="flex justify-between text-xs font-semibold mb-1.5">
+              <div className="flex flex-col min-[380px]:flex-row min-[380px]:items-center justify-between text-xs font-semibold mb-1.5 gap-1">
                 <span className="text-slate-700 flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-indigo-600" /> Academic Stress
+                  <span className="w-2.5 h-2.5 rounded-full bg-indigo-600 shrink-0" /> Academic Stress
                 </span>
                 <span className="font-mono text-indigo-700">{result.stressScore.toFixed(1)} / 100 ({result.stressLevel})</span>
               </div>
@@ -478,9 +478,9 @@ export default function FuzzyEngineWalkthrough({
 
             {/* Burnout Bar */}
             <div>
-              <div className="flex justify-between text-xs font-semibold mb-1.5">
+              <div className="flex flex-col min-[380px]:flex-row min-[380px]:items-center justify-between text-xs font-semibold mb-1.5 gap-1">
                 <span className="text-slate-700 flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-purple-600" /> Burnout Risk
+                  <span className="w-2.5 h-2.5 rounded-full bg-purple-600 shrink-0" /> Burnout Risk
                 </span>
                 <span className="font-mono text-purple-700">{result.burnoutScore.toFixed(1)} / 100 ({result.burnoutRisk})</span>
               </div>
@@ -498,7 +498,7 @@ export default function FuzzyEngineWalkthrough({
             </div>
 
             {/* Explanatory note */}
-            <div className="mt-8 p-3.5 bg-slate-50 rounded-2xl border border-slate-200/80 text-xs text-slate-600 flex items-start gap-2.5">
+            <div className="mt-6 sm:mt-8 p-3 sm:p-3.5 bg-slate-50 rounded-xl sm:rounded-2xl border border-slate-200/80 text-xs text-slate-600 flex items-start gap-2.5">
               <ShieldCheck className="w-4 h-4 text-indigo-600 shrink-0 mt-0.5" />
               <span>
                 <b>Centroid interpretation:</b> The output represents the balance point of all activated rules. Even with mixed signals, the system outputs a stable, continuous score without abrupt threshold jumps.
@@ -507,11 +507,11 @@ export default function FuzzyEngineWalkthrough({
           </div>
 
           {/* V1 Recommendations Card */}
-          <div className="lg:col-span-2 bg-gradient-to-br from-indigo-50 via-purple-50/60 to-fuchsia-50/50 rounded-3xl p-6 sm:p-7 border border-indigo-100 shadow-sm card-hover flex flex-col justify-between">
+          <div className="lg:col-span-2 bg-gradient-to-br from-indigo-50 via-purple-50/60 to-fuchsia-50/50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-7 border border-indigo-100 shadow-sm card-hover flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <Lightbulb className="w-5 h-5 text-amber-500" />
-                <h3 className="font-bold text-slate-900 text-base">V1 Baseline Advice</h3>
+                <Lightbulb className="w-5 h-5 text-amber-500 shrink-0" />
+                <h3 className="font-bold text-slate-900 text-sm sm:text-base">V1 Baseline Advice</h3>
               </div>
               <p className="text-xs text-slate-600 mb-4 leading-relaxed">
                 Heuristic guidance derived directly from your input membership degrees:
@@ -545,27 +545,27 @@ export default function FuzzyEngineWalkthrough({
         />
 
         {/* Visual Pipeline Flow Diagram */}
-        <div className="mt-8 p-5 sm:p-6 bg-white rounded-3xl border border-slate-200 shadow-sm card-hover">
+        <div className="mt-6 sm:mt-8 p-4 sm:p-6 bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-sm card-hover">
           <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-4">
             Mamdani Fuzzification Pipeline
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 text-center">
-            <div className="p-3 rounded-2xl bg-indigo-50/70 border border-indigo-100">
+          <div className="grid grid-cols-1 min-[420px]:grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 text-center">
+            <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-indigo-50/70 border border-indigo-100">
               <span className="text-[10px] font-bold uppercase text-indigo-600 block">Step 1</span>
               <p className="text-xs font-bold text-indigo-950 mt-1">Crisp Inputs</p>
               <p className="text-[10px] text-indigo-600/80 mt-0.5 font-mono">{sleep}h, {study}h, {assignments}, {attendance}%</p>
             </div>
-            <div className="p-3 rounded-2xl bg-purple-50/70 border border-purple-100">
+            <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-purple-50/70 border border-purple-100">
               <span className="text-[10px] font-bold uppercase text-purple-600 block">Step 2</span>
               <p className="text-xs font-bold text-purple-950 mt-1">Triangular MFs</p>
               <p className="text-[10px] text-purple-600/80 mt-0.5">Low, Medium, High bounds</p>
             </div>
-            <div className="p-3 rounded-2xl bg-blue-50/70 border border-blue-100">
+            <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-blue-50/70 border border-blue-100">
               <span className="text-[10px] font-bold uppercase text-blue-600 block">Step 3</span>
               <p className="text-xs font-bold text-blue-950 mt-1">Mamdani Inference</p>
               <p className="text-[10px] text-blue-600/80 mt-0.5">Min implication on 32 rules</p>
             </div>
-            <div className="p-3 rounded-2xl bg-emerald-50/70 border border-emerald-100">
+            <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-emerald-50/70 border border-emerald-100">
               <span className="text-[10px] font-bold uppercase text-emerald-600 block">Step 4</span>
               <p className="text-xs font-bold text-emerald-950 mt-1">Defuzzification</p>
               <p className="text-[10px] text-emerald-600/80 mt-0.5">Centroid Center of Gravity</p>
@@ -574,11 +574,11 @@ export default function FuzzyEngineWalkthrough({
         </div>
 
         {/* Live Degrees Grid */}
-        <div className="mt-6 grid lg:grid-cols-2 gap-6">
-          <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-sm card-hover">
+        <div className="mt-4 sm:mt-6 grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-7 border border-slate-200 shadow-sm card-hover">
             <div className="flex items-center gap-2 mb-2">
-              <BrainCircuit className="w-5 h-5 text-indigo-600" />
-              <h3 className="font-bold text-slate-900 text-base">Active Membership Degrees</h3>
+              <BrainCircuit className="w-5 h-5 text-indigo-600 shrink-0" />
+              <h3 className="font-bold text-slate-900 text-sm sm:text-base">Active Membership Degrees</h3>
             </div>
             <p className="text-xs text-slate-500 mb-4">
               Real-time antecedent degrees of truth (&mu; &isin; [0, 1]) fired by your current inputs:
@@ -586,9 +586,9 @@ export default function FuzzyEngineWalkthrough({
 
             <div className="space-y-4">
               {(Object.keys(result.degrees) as (keyof typeof result.degrees)[]).map((factor) => (
-                <div key={factor} className="p-3 bg-slate-50/70 rounded-2xl border border-slate-100">
+                <div key={factor} className="p-3 bg-slate-50/70 rounded-xl sm:rounded-2xl border border-slate-100">
                   <p className="text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">{factor}</p>
-                  <div className="grid grid-cols-3 gap-2">
+                  <div className="grid grid-cols-1 min-[340px]:grid-cols-3 gap-1.5 sm:gap-2">
                     {(["low", "medium", "high"] as const).map((term) => {
                       const v = result.degrees[factor][term] ?? 0;
                       const color =
@@ -612,10 +612,10 @@ export default function FuzzyEngineWalkthrough({
           </div>
 
           {/* Theoretical Ranges Card */}
-          <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-sm card-hover">
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-7 border border-slate-200 shadow-sm card-hover">
             <div className="flex items-center gap-2 mb-2">
-              <Sliders className="w-5 h-5 text-indigo-600" />
-              <h3 className="font-bold text-slate-900 text-base">Triangular Membership Ranges</h3>
+              <Sliders className="w-5 h-5 text-indigo-600 shrink-0" />
+              <h3 className="font-bold text-slate-900 text-sm sm:text-base">Triangular Membership Ranges</h3>
             </div>
             <p className="text-xs text-slate-500 mb-4">
               Theoretical triangular coordinate boundaries [a, b, c] defined in <code className="font-mono text-indigo-700">fuzzy_system.py</code>:
@@ -623,9 +623,9 @@ export default function FuzzyEngineWalkthrough({
 
             <div className="space-y-3.5 max-h-[380px] overflow-y-auto pr-1">
               {Object.entries(MEMBERSHIP_TEXT).map(([variable, terms]) => (
-                <div key={variable} className="p-3 bg-slate-50/60 rounded-2xl border border-slate-100">
+                <div key={variable} className="p-3 bg-slate-50/60 rounded-xl sm:rounded-2xl border border-slate-100">
                   <p className="text-xs font-bold text-slate-800 mb-1.5">{variable}</p>
-                  <div className="grid grid-cols-3 gap-2">
+                  <div className="grid grid-cols-1 min-[340px]:grid-cols-3 gap-1.5 sm:gap-2">
                     {Object.entries(terms).map(([term, range]) => (
                       <div key={term} className="text-xs bg-white border border-slate-200/70 rounded-xl p-2 shadow-2xs">
                         <p
@@ -657,13 +657,13 @@ export default function FuzzyEngineWalkthrough({
           subtitle="Detailed reference of the 32 Mamdani IF-THEN rules designed for academic viva presentation and deterministic evaluation."
         />
 
-        <div className="mt-8 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm card-hover">
+        <div className="mt-6 sm:mt-8 bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 border border-slate-200 shadow-sm card-hover">
           {/* Rule Filter Switcher */}
-          <div className="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b border-slate-100">
-            <div className="flex items-center gap-1.5 p-1 bg-slate-100 rounded-xl border border-slate-200">
+          <div className="flex flex-col min-[480px]:flex-row min-[480px]:items-center justify-between gap-3 mb-4 sm:mb-6 pb-4 border-b border-slate-100">
+            <div className="flex flex-wrap items-center gap-1 sm:gap-1.5 p-1 bg-slate-100 rounded-xl border border-slate-200">
               <button
                 onClick={() => setRuleFilter("all")}
-                className={`btn-press px-3 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer ${
+                className={`btn-press px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer min-h-[36px] flex items-center ${
                   ruleFilter === "all" ? "bg-white text-indigo-700 shadow-xs" : "text-slate-600 hover:text-slate-900"
                 }`}
               >
@@ -671,7 +671,7 @@ export default function FuzzyEngineWalkthrough({
               </button>
               <button
                 onClick={() => setRuleFilter("stress")}
-                className={`btn-press px-3 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer ${
+                className={`btn-press px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer min-h-[36px] flex items-center ${
                   ruleFilter === "stress" ? "bg-white text-indigo-700 shadow-xs" : "text-slate-600 hover:text-slate-900"
                 }`}
               >
@@ -679,7 +679,7 @@ export default function FuzzyEngineWalkthrough({
               </button>
               <button
                 onClick={() => setRuleFilter("burnout")}
-                className={`btn-press px-3 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer ${
+                className={`btn-press px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer min-h-[36px] flex items-center ${
                   ruleFilter === "burnout" ? "bg-white text-indigo-700 shadow-xs" : "text-slate-600 hover:text-slate-900"
                 }`}
               >
@@ -697,10 +697,10 @@ export default function FuzzyEngineWalkthrough({
             {rulesToDisplay.map(({ text, type }, idx) => (
               <div
                 key={idx}
-                className="flex items-center gap-2 p-3 rounded-xl border border-slate-100 bg-slate-50/60 hover:bg-white hover:border-indigo-200 transition-all text-xs font-mono text-slate-800"
+                className="flex flex-col min-[420px]:flex-row min-[420px]:items-center gap-1.5 min-[420px]:gap-2 p-2.5 sm:p-3 rounded-xl border border-slate-100 bg-slate-50/60 hover:bg-white hover:border-indigo-200 transition-all text-xs font-mono text-slate-800"
               >
                 <span
-                  className={`text-[10px] font-bold uppercase px-2 py-0.5 rounded-md border shrink-0 ${
+                  className={`text-[10px] font-bold uppercase px-2 py-0.5 rounded-md border shrink-0 w-fit ${
                     type === "stress"
                       ? "bg-indigo-50 text-indigo-700 border-indigo-200"
                       : "bg-purple-50 text-purple-700 border-purple-200"
@@ -708,7 +708,7 @@ export default function FuzzyEngineWalkthrough({
                 >
                   #{idx + 1} {type}
                 </span>
-                <span className="leading-relaxed flex-1">{formatRule(text)}</span>
+                <span className="leading-relaxed flex-1 break-words">{formatRule(text)}</span>
               </div>
             ))}
           </div>
@@ -727,12 +727,12 @@ export default function FuzzyEngineWalkthrough({
         />
 
         {/* Code Tabs */}
-        <div className="mt-8 flex flex-wrap gap-2 mb-4">
+        <div className="mt-6 sm:mt-8 flex flex-wrap gap-1.5 sm:gap-2 mb-4">
           {(["fuzzy_system.py", "app.py", "requirements.txt"] as const).map((t) => (
             <button
               key={t}
               onClick={() => setActiveTab(t)}
-              className={`btn-press px-4 py-2 rounded-xl text-sm font-mono transition-all duration-200 cursor-pointer ${
+              className={`btn-press px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-mono min-h-[40px] flex items-center transition-all duration-200 cursor-pointer ${
                 activeTab === t
                   ? "bg-slate-900 text-white shadow-xs"
                   : "bg-white text-slate-600 border border-slate-200 hover:border-indigo-300 hover:text-slate-900"
@@ -744,7 +744,7 @@ export default function FuzzyEngineWalkthrough({
         </div>
 
         {/* Embedded CodeBlock */}
-        <div className="rounded-3xl overflow-hidden shadow-sm border border-slate-200">
+        <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm border border-slate-200">
           <CodeBlock
             filename={activeTab}
             language={activeTab.endsWith(".txt") ? "text" : "python"}
@@ -754,27 +754,27 @@ export default function FuzzyEngineWalkthrough({
         </div>
 
         {/* Deliverables Download Grid */}
-        <div className="mt-12">
+        <div className="mt-8 sm:mt-12">
           <h4 className="text-base font-bold text-slate-900 mb-4 flex items-center gap-2">
-            <Download className="w-4 h-4 text-indigo-600" />
+            <Download className="w-4 h-4 text-indigo-600 shrink-0" />
             Download Complete Project Deliverables
           </h4>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {PROJECT_FILES.map(({ name, size, icon: Icon, desc }) => (
               <a
                 key={name}
                 href={`/project/${name}`}
                 download
-                className="card-hover group bg-white rounded-2xl p-5 border border-slate-200 hover:border-indigo-300 hover:shadow-lg transition-all duration-200 cursor-pointer"
+                className="card-hover group bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 border border-slate-200 hover:border-indigo-300 hover:shadow-lg transition-all duration-200 cursor-pointer"
               >
                 <div className="flex items-start gap-3">
-                  <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-indigo-50 to-purple-50 flex items-center justify-center border border-indigo-100 shadow-2xs">
+                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-indigo-50 to-purple-50 flex items-center justify-center border border-indigo-100 shadow-2xs shrink-0">
                     <Icon className="w-5 h-5 text-indigo-600" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between">
-                      <p className="font-mono text-sm font-semibold text-slate-900 truncate">{name}</p>
+                    <div className="flex items-center justify-between gap-1">
+                      <p className="font-mono text-xs sm:text-sm font-semibold text-slate-900 truncate">{name}</p>
                       <Download className="w-4 h-4 text-slate-400 group-hover:text-indigo-600 transition shrink-0" />
                     </div>
                     <p className="text-[11px] text-slate-500 mt-0.5">{size}</p>
@@ -787,7 +787,7 @@ export default function FuzzyEngineWalkthrough({
         </div>
 
         {/* Academic Notice Banner */}
-        <div className="mt-10 card-hover rounded-2xl bg-amber-50 border-l-4 border-amber-400 p-5 flex items-start gap-3 shadow-2xs">
+        <div className="mt-8 sm:mt-10 card-hover rounded-xl sm:rounded-2xl bg-amber-50 border-l-4 border-amber-400 p-4 sm:p-5 flex flex-col min-[460px]:flex-row items-start gap-3 shadow-2xs">
           <ShieldAlert className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
           <div>
             <p className="font-bold text-amber-900 text-sm">Academic Project Notice &amp; Disclaimer</p>
@@ -821,8 +821,8 @@ function SectionHeader({
         <span>•</span>
         <span>{eyebrow}</span>
       </div>
-      <h2 className="mt-3 text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">{title}</h2>
-      <p className="mt-2 text-sm text-slate-600 leading-relaxed">{subtitle}</p>
+      <h2 className="mt-3 text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight break-words">{title}</h2>
+      <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">{subtitle}</p>
     </div>
   );
 }
