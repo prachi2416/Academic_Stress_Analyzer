@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { Container, Reveal, SectionHeading } from '../components/ui';
 import CodeBlock from '../components/CodeBlock';
 import { PROJECT_FILES, type ProjectFile } from '../lib/projectFiles';
-import { FileCode2, Download, ExternalLink, NotebookPen } from 'lucide-react';
+import { FileCode2, Download, ExternalLink, NotebookPen, Github } from 'lucide-react';
 
 export default function Code() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -53,11 +53,12 @@ export default function Code() {
                   🚀 Open in Google Colab
                 </a>
                 <a
-                  href="/project/Smart_Academic_Stress_Analyzer.ipynb"
-                  download
+                  href="https://github.com/prachi2416/Academic_Stress_Analyzer"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-slate-700"
                 >
-                  <Download size={16} /> Download .ipynb
+                  <Github size={16} /> GitHub Repository
                 </a>
               </div>
             </div>
