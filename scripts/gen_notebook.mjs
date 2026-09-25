@@ -25,10 +25,19 @@ function code(text) {
 const cells = [];
 
 // ----------------------------------------------------------------------- //
+cells.push(md(`### 🌐 Smart Academic Stress Analyzer Web Application
+
+[🚀 Open Web Application](YOUR_DEPLOYED_WEB_APP_URL)
+
+---`));
+
+// ----------------------------------------------------------------------- //
 cells.push(md(`# 🎓 Smart Academic Stress Analyzer — Scikit-Fuzzy (Google Colab)
 
 A **Mamdani fuzzy inference system** built with \`scikit-fuzzy\` that predicts
 student **Stress** and **Burnout** from four academic inputs.
+
+> M.Sc. Data Science — Soft Computing Techniques (SCT) mini project.
 
 **This notebook runs the SAME membership functions and rules as the Streamlit app (\`app.py\` / \`fuzzy_system.py\`).**
 

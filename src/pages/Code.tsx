@@ -1,26 +1,23 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Container, Reveal, SectionHeading } from '../components/ui';
 import CodeBlock from '../components/CodeBlock';
 import { PROJECT_FILES, type ProjectFile } from '../lib/projectFiles';
 import { FileCode2, Download, ExternalLink, NotebookPen } from 'lucide-react';
 
-// Fallback code shown until the live file is fetched by CodeBlock.
-const FALLBACK: Record<string, string> = {
-  'fuzzy_system.py': '# Loading fuzzy_system.py ...',
-  'app.py': '# Loading app.py ...',
-  'recommendations.py': '# Loading recommendations.py ...',
-  'sample_demo.py': '# Loading sample_demo.py ...',
-  'Smart_Academic_Stress_Analyzer.ipynb': '// Loading notebook ...',
-  'requirements.txt': '# Loading requirements.txt ...',
-  'README.md': '<!-- Loading README.md ... -->',
-};
-
 export default function Code() {
-  const [active, setActive] = useState<ProjectFile>(PROJECT_FILES[0]);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const fileParam = searchParams.get('file');
+
+  const active = (fileParam ? PROJECT_FILES.find((f) => f.name === fileParam) : null) ?? PROJECT_FILES[0];
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const selectFile = (f: ProjectFile) => {
+    setSearchParams({ file: f.name });
+  };
 
   return (
     <div className="pt-24 pb-20">
@@ -46,13 +43,23 @@ export default function Code() {
                   </p>
                 </div>
               </div>
-              <a
-                href="/project/Smart_Academic_Stress_Analyzer.ipynb"
-                download
-                className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-slate-700"
-              >
-                <Download size={16} /> Download .ipynb
-              </a>
+              <div className="flex flex-wrap items-center gap-2">
+                <a
+                  href="https://colab.research.google.com/drive/1oCivE-973R41QKdFnpiyF1ZKh45vyhst"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-amber-600 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-amber-700"
+                >
+                  🚀 Open in Google Colab
+                </a>
+                <a
+                  href="/project/Smart_Academic_Stress_Analyzer.ipynb"
+                  download
+                  className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-slate-700"
+                >
+                  <Download size={16} /> Download .ipynb
+                </a>
+              </div>
             </div>
           </div>
         </Reveal>
@@ -68,7 +75,7 @@ export default function Code() {
                 {PROJECT_FILES.map((f) => (
                   <button
                     key={f.name}
-                    onClick={() => setActive(f)}
+                    onClick={() => selectFile(f)}
                     className={`flex w-full items-center gap-2.5 rounded-xl px-3 py-2.5 text-left transition ${
                       active.name === f.name
                         ? 'bg-indigo-50 ring-1 ring-indigo-200'
@@ -110,10 +117,21 @@ export default function Code() {
                 <span className="ml-auto rounded-full bg-slate-100 px-2.5 py-0.5 text-[10px] font-bold uppercase text-slate-500">
                   {active.language}
                 </span>
+                {active.name === 'Smart_Academic_Stress_Analyzer.ipynb' && (
+                  <a
+                    href="https://colab.research.google.com/drive/1oCivE-973R41QKdFnpiyF1ZKh45vyhst"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-amber-300 bg-amber-50 px-2.5 py-1 text-xs font-bold text-amber-800 transition hover:bg-amber-100"
+                  >
+                    🚀 Open in Google Colab
+                  </a>
+                )}
               </div>
               <p className="mb-3 text-sm leading-relaxed text-slate-500">{active.description}</p>
               <CodeBlock
-                code={FALLBACK[active.name] ?? '# Loading...'}
+                key={active.name}
+                code={active.content}
                 filename={active.name}
                 downloadUrl={active.downloadUrl}
                 language={active.language === 'markdown' ? 'text' : active.language === 'text' ? 'text' : active.language}

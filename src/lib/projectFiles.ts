@@ -1,3 +1,11 @@
+import fuzzySystemCode from '../../public/project/fuzzy_system.py?raw';
+import appCode from '../../public/project/app.py?raw';
+import recommendationsCode from '../../public/project/recommendations.py?raw';
+import sampleDemoCode from '../../public/project/sample_demo.py?raw';
+import notebookCode from '../../public/project/Smart_Academic_Stress_Analyzer.ipynb?raw';
+import requirementsCode from '../../public/project/requirements.txt?raw';
+import readmeCode from '../../public/project/README.md?raw';
+
 /**
  * Metadata for the downloadable Python project files shown in the Code browser.
  */
@@ -8,6 +16,7 @@ export interface ProjectFile {
   language: string;
   description: string;
   icon: string;
+  content: string;
 }
 
 export const PROJECT_FILES: ProjectFile[] = [
@@ -18,6 +27,7 @@ export const PROJECT_FILES: ProjectFile[] = [
     language: 'python',
     description: 'Scikit-Fuzzy engine — SINGLE SOURCE OF TRUTH. Defines antecedents, consequents, trimf membership functions, all ctrl.Rule rules, ControlSystem + Mamdani centroid defuzzification.',
     icon: '🧠',
+    content: fuzzySystemCode,
   },
   {
     name: 'app.py',
@@ -26,6 +36,7 @@ export const PROJECT_FILES: ProjectFile[] = [
     language: 'python',
     description: 'Streamlit front-end. Calls fuzzy_system.py, displays Stress/Burnout scores, levels, contributing factors, recommendations, 7-day plan and membership-function charts.',
     icon: '🖥️',
+    content: appCode,
   },
   {
     name: 'recommendations.py',
@@ -34,6 +45,7 @@ export const PROJECT_FILES: ProjectFile[] = [
     language: 'python',
     description: 'Contributing-factor analysis + personalized recommendations + 7-day action plan (simple if/else heuristics on raw inputs).',
     icon: '💡',
+    content: recommendationsCode,
   },
   {
     name: 'sample_demo.py',
@@ -42,6 +54,7 @@ export const PROJECT_FILES: ProjectFile[] = [
     language: 'python',
     description: 'Optional command-line demo that runs the fuzzy engine on three sample student profiles.',
     icon: '⚡',
+    content: sampleDemoCode,
   },
   {
     name: 'Smart_Academic_Stress_Analyzer.ipynb',
@@ -50,6 +63,7 @@ export const PROJECT_FILES: ProjectFile[] = [
     language: 'json',
     description: 'Google Colab notebook — installs scikit-fuzzy and runs the full pipeline: membership functions → rules → Mamdani inference → defuzzification → Stress/Burnout output. Same MFs & rules as the Streamlit app.',
     icon: '📓',
+    content: notebookCode,
   },
   {
     name: 'requirements.txt',
@@ -58,6 +72,7 @@ export const PROJECT_FILES: ProjectFile[] = [
     language: 'text',
     description: 'Python dependencies: streamlit, scikit-fuzzy, numpy, matplotlib, pandas.',
     icon: '📦',
+    content: requirementsCode,
   },
   {
     name: 'README.md',
@@ -66,5 +81,6 @@ export const PROJECT_FILES: ProjectFile[] = [
     language: 'markdown',
     description: 'Full project documentation: structure, membership functions, rules, methodology, run instructions.',
     icon: '📘',
+    content: readmeCode,
   },
 ];

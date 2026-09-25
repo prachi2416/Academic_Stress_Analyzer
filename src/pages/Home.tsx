@@ -627,7 +627,7 @@ export default function Home() {
                   </p>
                   <div className="mt-4 flex gap-2">
                     <Link
-                      to="/code?file=fuzzy_system.py"
+                      to={`/code?file=${encodeURIComponent(f.name)}`}
                       className="flex-1 rounded-lg border border-slate-200 bg-white px-3 py-2 text-center text-xs font-bold text-slate-600 transition hover:border-indigo-300 hover:text-indigo-700"
                     >
                       View
@@ -640,6 +640,16 @@ export default function Home() {
                       Download
                     </a>
                   </div>
+                  {f.name === 'Smart_Academic_Stress_Analyzer.ipynb' && (
+                    <a
+                      href="https://colab.research.google.com/drive/1oCivE-973R41QKdFnpiyF1ZKh45vyhst"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-2 flex items-center justify-center gap-1.5 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-center text-xs font-bold text-amber-800 transition hover:bg-amber-100"
+                    >
+                      🚀 Open in Google Colab
+                    </a>
+                  )}
                 </div>
               ))}
             </div>

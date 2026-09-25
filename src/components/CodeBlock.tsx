@@ -101,6 +101,7 @@ function tokenizePython(code: string): Tok[] {
     }
     if (j === i) j++;
     out.push({ t: 'punct', v: code.slice(i, j) });
+    i = j;
   }
   return out;
 }
@@ -145,6 +146,7 @@ function tokenizeJson(code: string): Tok[] {
     while (j < n && code[j] !== '"' && !/[0-9-]/.test(code[j]) && !isIdStart(code[j])) j++;
     if (j === i) j++;
     out.push({ t: 'punct', v: code.slice(i, j) });
+    i = j;
   }
   return out;
 }
@@ -178,18 +180,17 @@ function renderTokens(code: string, language: string): ReactNode {
 
 export default function CodeBlock({ code, filename, downloadUrl, language = 'python' }: Props) {
   const [copied, setCopied] = useState(false);
-  const [loaded, setLoaded] = useState(false);
+  const [loaded, setLoaded] = useState(true);
   const [content, setContent] = useState(code);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let active = true;
-    setLoaded(false);
     // Try to fetch the live file so displayed code == downloadable file.
     fetch(downloadUrl)
       .then((r) => (r.ok ? r.text() : Promise.reject(new Error('not found'))))
       .then((txt) => {
-        if (active) {
+        if (active && txt) {
           setContent(txt);
           setLoaded(true);
         }

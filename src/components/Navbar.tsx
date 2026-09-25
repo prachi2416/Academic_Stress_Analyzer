@@ -18,13 +18,12 @@ export default function Navbar() {
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  }, [location.pathname]);
 
   const goSection = (id: string) => {
     setOpen(false);
     if (location.pathname !== '/') {
-      navigate('/');
-      setTimeout(() => scrollToId(id), 180);
+      navigate(`/#${id}`);
     } else {
       scrollToId(id);
     }
@@ -33,8 +32,28 @@ export default function Navbar() {
   const links: { label: string; action: () => void }[] = [
     { label: 'Analyzer', action: () => goSection('analyzer') },
     { label: 'How it works', action: () => goSection('methodology-preview') },
-    { label: 'Code & Files', action: () => { setOpen(false); navigate('/code'); } },
-    { label: 'Methodology', action: () => { setOpen(false); navigate('/methodology'); } },
+    {
+      label: 'Code & Files',
+      action: () => {
+        setOpen(false);
+        if (location.pathname === '/code') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          navigate('/code');
+        }
+      },
+    },
+    {
+      label: 'Methodology',
+      action: () => {
+        setOpen(false);
+        if (location.pathname === '/methodology') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          navigate('/methodology');
+        }
+      },
+    },
   ];
 
   return (
@@ -46,7 +65,16 @@ export default function Navbar() {
       }`}
     >
       <Container className="flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
+        <Link
+          to="/"
+          className="flex items-center gap-2.5"
+          onClick={() => {
+            setOpen(false);
+            if (location.pathname === '/') {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          }}
+        >
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600 text-white shadow-lg shadow-indigo-500/30">
             <Brain size={18} />
           </span>
