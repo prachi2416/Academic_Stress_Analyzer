@@ -45,7 +45,7 @@ export default function Code() {
               </div>
               <div className="flex flex-wrap items-center gap-2">
                 <a
-                  href="https://colab.research.google.com/drive/1oCivE-973R41QKdFnpiyF1ZKh45vyhst"
+                  href="https://colab.research.google.com/drive/1vo_7fIjZCt87ixUbFESxih2sB5LPZBIN"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-amber-600 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-amber-700"
@@ -120,7 +120,7 @@ export default function Code() {
                 </span>
                 {active.name === 'Smart_Academic_Stress_Analyzer.ipynb' && (
                   <a
-                    href="https://colab.research.google.com/drive/1oCivE-973R41QKdFnpiyF1ZKh45vyhst"
+                    href="https://colab.research.google.com/drive/1vo_7fIjZCt87ixUbFESxih2sB5LPZBIN"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 rounded-lg border border-amber-300 bg-amber-50 px-2.5 py-1 text-xs font-bold text-amber-800 transition hover:bg-amber-100"

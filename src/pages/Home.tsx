@@ -642,7 +642,7 @@ export default function Home() {
                   </div>
                   {f.name === 'Smart_Academic_Stress_Analyzer.ipynb' && (
                     <a
-                      href="https://colab.research.google.com/drive/1oCivE-973R41QKdFnpiyF1ZKh45vyhst"
+                      href="https://colab.research.google.com/drive/1vo_7fIjZCt87ixUbFESxih2sB5LPZBIN"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="mt-2 flex items-center justify-center gap-1.5 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-center text-xs font-bold text-amber-800 transition hover:bg-amber-100"

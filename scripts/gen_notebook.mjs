@@ -278,6 +278,15 @@ The **Streamlit application** (\`app.py\`) uses this exact same \`scikit-fuzzy\`
 from \`fuzzy_system.py\` — there is only one fuzzy system.`));
 
 // ----------------------------------------------------------------------- //
+cells.push(md(`## 🌐 View Project UI
+
+The Academic Stress Analyzer is also available as a live web application.
+
+👉 **[Open Project UI](https://academicstressanalyzer.vercel.app/)**
+
+Click the link above to open the deployed application in your browser.`));
+
+// ----------------------------------------------------------------------- //
 const notebook = {
   cells,
   metadata: {
